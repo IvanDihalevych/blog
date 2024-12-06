@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Repositories;
-
 use App\Models\BlogPost as Model;
 use Illuminate\Database\Eloquent\Collection;
-
 /**
  * Class BlogСategoryRepository.
  */
@@ -14,7 +11,6 @@ class BlogPostRepository extends CoreRepository
     {
         return Model::class; //абстрагування моделі BlogCategory, для легшого створення іншого репозиторія
     }
-
     /**
      * Отримати список статей
      *
@@ -23,12 +19,10 @@ class BlogPostRepository extends CoreRepository
     public function getAllWithPaginate()
     {
         $columns = ['id', 'title', 'slug', 'is_published', 'published_at', 'user_id', 'category_id',];
-
         $result = $this->startConditions()
             ->select($columns)
             ->orderBy('id','DESC')
             ->paginate(25);
-
         return $result;
     }
     /**

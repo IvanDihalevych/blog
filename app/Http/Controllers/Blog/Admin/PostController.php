@@ -1,17 +1,13 @@
 <?php
-
 namespace App\Http\Controllers\Blog\Admin;
-
 use App\Repositories\BlogPostRepository;
 use Illuminate\Http\Request;
-
 class PostController extends BaseController
 {
     /**
      * @var BlogPostRepository
      */
     private $blogPostRepository;
-
     public function __construct()
     {
         parent::__construct();
@@ -23,10 +19,8 @@ class PostController extends BaseController
     public function index()
     {
         $paginator = $this->blogPostRepository->getAllWithPaginate();
-
         return view('blog.admin.posts.index', compact('paginator'));
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -34,7 +28,6 @@ class PostController extends BaseController
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -42,7 +35,6 @@ class PostController extends BaseController
     {
         //
     }
-
     /**
      * Display the specified resource.
      */
@@ -50,7 +42,6 @@ class PostController extends BaseController
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -58,7 +49,6 @@ class PostController extends BaseController
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      */
@@ -66,7 +56,6 @@ class PostController extends BaseController
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      */
